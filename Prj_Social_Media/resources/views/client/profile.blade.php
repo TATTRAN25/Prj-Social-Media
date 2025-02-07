@@ -63,8 +63,15 @@
                                     class="w-100 rounded"
                                     style="aspect-ratio: 1/1; object-fit: cover;">
                                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark bg-opacity-25 opacity-0 hover-opacity">
-                                    <i class="fa-solid fa-heart text-white me-3"></i>
-                                    <i class="fa-solid fa-comment text-white"></i>
+                                    <div>
+                                        <i class="fa-solid fa-heart text-white me-3"></i>
+                                        <span>29</span>
+                                    </div>
+                                   
+                                    <div>
+                                        <i class="fa-solid fa-comment text-white"></i>
+                                        <span>2</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
