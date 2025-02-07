@@ -56,6 +56,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Post::class);
     }
+<<<<<<< HEAD
 
     public function comments()
     {
@@ -91,4 +92,6 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne(UserProfile::class);
     }
+=======
+>>>>>>> Thuan/2-Posts
 }

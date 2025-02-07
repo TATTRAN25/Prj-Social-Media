@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\client\ProfileController;
+use App\Http\Controllers\client\PostController;
 use App\Http\Controllers\AuthController;
 
 Route::prefix('v1')->group(function () {
@@ -21,4 +23,11 @@ Route::prefix('v1')->group(function () {
     // Đặt lại mật khẩu
     Route::get('/reset-password/{token}', [AuthController::class, 'showResetPasswordForm'])->name('password.reset');
     Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.update');
+
+    // profile
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
+    // post
+    Route::get('/post', [PostController::class, 'index'])->name('posts.index');
+    Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 });

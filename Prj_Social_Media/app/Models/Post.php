@@ -10,13 +10,27 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
+<<<<<<< HEAD
         'user_id', 'content', 'media'
+=======
+        'user_id',
+        'title',
+        'content',
+        'media',
+        'media_type',
+        'location',
+        'status',
+        'slug',
+        'like_count',
+        'comment_count',
+>>>>>>> Thuan/2-Posts
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+<<<<<<< HEAD
 
     public function comments()
     {
@@ -28,3 +42,11 @@ class Post extends Model
         return $this->hasMany(Like::class);
     }
 }
+=======
+    
+    protected $casts = [
+        'like_count' => 'integer',
+        'comment_count' => 'integer',
+    ];
+}
+>>>>>>> Thuan/2-Posts

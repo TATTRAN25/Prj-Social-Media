@@ -14,8 +14,16 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('title')->nullable();
             $table->text('content');
             $table->string('media')->nullable();
+            $table->string('media_type')->nullable(); 
+            $table->string('location')->nullable();
+            $table->enum('status', ['published', 'draft', 'hidden'])->default('published');
+            $table->string('slug')->unique()->nullable();
+            $table->unsignedBigInteger('like_count')->default(0);
+            $table->unsignedBigInteger('comment_count')->default(0);
+            
             $table->timestamps();
         });
     }
