@@ -40,21 +40,17 @@
             z-index: 1000;
         }
         
-        .content-area.with-right {
+        .content-area .with-right {
             margin-right: 300px;
         }
     </style>
 </head>
 <body class="bg-light">
 
-    @include('components.sidebar')
+    @include('client/components.sidebar')
 
-    <div class="content-area with-right p-4">
+    <div class="p-4 content-area ">
         @yield('content')
-    </div>
-
-    <div class="p-4">
-        @include('components.right-sidebar')
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
