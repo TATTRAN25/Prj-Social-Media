@@ -15,4 +15,10 @@ Route::prefix('v1')->group(function () {
     Route::get('/home', function () {
         return view('home');
     })->middleware('auth')->name('home');
+    // Quên mật khẩu
+    Route::get('/forgot-password', [AuthController::class, 'showForgotPasswordForm'])->name('password.request');
+    Route::post('/forgot-password', [AuthController::class, 'sendResetLink'])->name('password.email');
+    // Đặt lại mật khẩu
+    Route::get('/reset-password/{token}', [AuthController::class, 'showResetPasswordForm'])->name('password.reset');
+    Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.update');
 });

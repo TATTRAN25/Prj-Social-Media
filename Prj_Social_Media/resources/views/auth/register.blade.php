@@ -44,7 +44,7 @@
                 <p>hoặc sử dụng tài khoản của bạn</p>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Mật khẩu" required>
-                <a href="#">Quên mật khẩu?</a>
+                <a href="{{ route('password.request') }}">Quên mật khẩu?</a>
                 <button type="submit">Đăng Nhập</button>
             </form>
         </div>
