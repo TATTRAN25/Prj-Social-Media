@@ -11,20 +11,19 @@
 
 <body>
     <div class="notification">
-            @if(session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
-            @endif
-
-            @if($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
+        @if(session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+        @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
+        @endif
+    </div>
     <div class="container" id="main">
         <div class="sign-up">
             <form action="{{ route('register') }}" method="POST">
@@ -75,6 +74,11 @@
         signInButton.addEventListener('click', () => {
             main.classList.remove("right-panel-active");
         });
+
+        // Hiển thị thông báo nếu có
+        if (document.querySelector('.notification .alert')) {
+            document.querySelector('.notification').style.display = 'block';
+        }
     </script>
 </body>
 

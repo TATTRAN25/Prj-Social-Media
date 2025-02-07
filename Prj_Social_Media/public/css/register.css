@@ -201,22 +201,33 @@ button:hover {
 
 .notification {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #fff;
-    padding: 10px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 15px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-    display: none;
-    animation: showNotification 0.5s ease-in-out forwards;
+    display: none; 
+    z-index: 999;
 }
-@keyframes showNotification {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+
+.alert-success {
+    background-color: #e6ffed;
+    color: #2d6a4f;
+    border: 1px solid #a7f3d0;
+}
+
+.alert-danger {
+    background-color: #ffe6e6;
+    color: #b71c1c;
+    border: 1px solid #f9c2c2;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
 }
