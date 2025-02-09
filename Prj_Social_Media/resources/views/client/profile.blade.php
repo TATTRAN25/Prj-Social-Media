@@ -85,11 +85,11 @@
                                             bg-dark bg-opacity-25 opacity-0 hover-opacity gap-3">
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-heart text-white me-2"></i>
-                                        <span class="text-white">29</span>
+                                        <span class="text-white">{{$post->like_count}}</span>
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-comment text-white me-2"></i>
-                                        <span class="text-white">2</span>
+                                        <span class="text-white">{{$post->comment_count}}</span>
                                     </div>
                                 </div>
                             </div>
