@@ -59,7 +59,7 @@
             </a>
         </li>
         <li class="mb-3">
-            <a href="#" class="text-decoration-none text-dark d-flex align-items-center gap-2">
+            <a href="{{ route('profile.edit') }}" class="text-decoration-none text-dark d-flex align-items-center gap-2">
                 <i class="fa fa-user me-2"></i>
                 <span>Trang cá nhân</span>
             </a>

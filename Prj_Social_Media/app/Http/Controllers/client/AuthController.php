@@ -4,6 +4,7 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -42,9 +43,12 @@ class AuthController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
+            // Tạo profile cho người dùng
+            UserProfile::create(['user_id' => $user->id]);
+
             // Gửi email chúc mừng
             Mail::raw("Chúc mừng {$user->name}! Bạn đã đăng ký tài khoản thành công trên Social Web.", function ($message) use ($user) {
-                $message->to($user->email); // Gửi đến địa chỉ email của người dùng
+                $message->to($user->email);
                 $message->subject('Chúc mừng bạn đã đăng ký thành công!');
             });
 

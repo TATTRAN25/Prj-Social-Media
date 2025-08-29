@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\client\AuthController;
+use App\Http\Controllers\client\ProfileController;
 
 Route::prefix('v1')->group(function () {
     // Hiển thị form đăng ký
@@ -21,4 +22,9 @@ Route::prefix('v1')->group(function () {
     // Đặt lại mật khẩu
     Route::get('/reset-password/{token}', [AuthController::class, 'showResetPasswordForm'])->name('password.reset');
     Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.update');
+    // Hiển thị trang cá nhân
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->middleware('auth')->name('profile.edit');
+    // Cập nhật hồ sơ người dùng
+    Route::put('/profile/update', [ProfileController::class, 'update'])->middleware('auth')->name('profile.update');
+    Route::post('/profile/change-password', [ProfileController::class, 'changePassword'])->name('profile.change-password');
 });
